@@ -1,0 +1,36 @@
+security:
+
+  authentication:
+    enabled: true
+
+  authorization:
+    enabled: true
+
+  tenant_isolation:
+    enabled: true
+
+  pii:
+    enabled: true
+    default_access: false
+
+  tools:
+    require_authorization: true
+
+  database:
+    read_only: true
+    max_rows: 10000
+    timeout_seconds: 30
+
+  sql:
+    allow_select: true
+    allow_insert: false
+    allow_update: false
+    allow_delete: false
+    allow_drop: false
+    allow_alter: false
+
+  hitl:
+    enabled: true
+    sensitive_operations: true
+    destructive_operations: true
+    low_confidence: true

@@ -1,0 +1,40 @@
+from abc import ABC, abstractmethod
+
+from company_ai.contracts.llm import (
+    LLMRequest,
+    LLMResponse,
+)
+
+
+class GuardrailPort(ABC):
+
+    @abstractmethod
+    async def validate_input(
+        self,
+        request: LLMRequest,
+    ) -> None:
+        ...
+
+    @abstractmethod
+    async def validate_output(
+        self,
+        request: LLMRequest,
+        response: LLMResponse,
+    ) -> None:
+        ...
+
+
+class NoOpGuardrail(GuardrailPort):
+
+    async def validate_input(
+        self,
+        request: LLMRequest,
+    ) -> None:
+        return None
+
+    async def validate_output(
+        self,
+        request: LLMRequest,
+        response: LLMResponse,
+    ) -> None:
+        return None
