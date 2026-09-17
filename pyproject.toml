@@ -7,12 +7,15 @@ requires-python = ">=3.12,<3.13"
 
 dependencies = [
  "litellm",
+    "litellm",
     "pydantic",
     "pydantic-settings",
     "pyyaml",
     "python-dotenv",
     "langgraph",
     "langchain",
+    "pandas",
+    "langchain-community",
 ]
 
 [dependency-groups]
